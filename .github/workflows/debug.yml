@@ -13,6 +13,18 @@ jobs:
     name: dbg
     runs-on: windows-latest
     steps:
+    - name: Checkout repo
+      uses: actions/checkout@v4
+    - name: Checkout gr-display repo
+      uses: actions/checkout@v4
+      with:
+        repository: dl1ksv/gr-display
+        path: gr-display
+    - name: Install python environment
+      uses: mamba-org/setup-micromamba@v1
+      with:
+        environment-file: installer_specs/buildenv.conda-lock.yml
+        environment-name: buildenv
     - name: Start SSH session
       uses: luchihoratiu/debug-via-ssh@main
       with:
