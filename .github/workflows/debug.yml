@@ -4,7 +4,7 @@ on:
 jobs:
   build:
     name: dbg
-    runs-on: win-64
+    runs-on: windows-latest
     steps:
     - name: Start SSH session
       uses: luchihoratiu/debug-via-ssh@main
